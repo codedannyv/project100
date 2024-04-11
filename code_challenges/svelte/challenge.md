@@ -1,0 +1,1 @@
+1. Create a toggle switch that change sits state (on/off) when clicked. 
