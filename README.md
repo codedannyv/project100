@@ -1,9 +1,9 @@
 # Project100 🚀
 
 ## WTF is this?
-Project100 is my personal challenge, my odyssey through the vast sea of programming concepts. It's currently about making 100 Svelte components. 
+Project100 is my personal challenge, my odyssey through the vast sea of programming concepts. 
 
-# That sounds super grindy? 
+## That sounds super grindy? 
 That's because it is!
 
 Dabbling in something once barely scratches the surface. But immersing yourself in it 100 times? That's the ticket to truly getting it. This project is my way of hammering those concepts into my brain, ensuring that what I learn sticks.
@@ -19,5 +19,9 @@ To the skeptics wondering about diminishing returns—have you tried doing somet
 
 ## Jump In!
 So, if you're up for a challenge, curious about programming, or just want to see someone tackle an arbitrary yet fascinating goal, you're in the right place. Dive into the projects, explore the code, and maybe start your own Project100. After all, it's not about the destination; it's about the journey—and this one's going to be a long, rewarding ride.
+
+---
+
+**Currently I am building 100 svelte component**
 
 
