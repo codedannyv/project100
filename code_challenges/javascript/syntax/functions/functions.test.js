@@ -27,7 +27,45 @@ describe("convertMinutes function", () => {
         // Act
         const result = fx.convertToSeconds(min);
 
-        //Assert
+        // Assert
         expect(result).toEqual(expected);
     });
+});
+
+describe("even odd function", () => {
+    it("returns true if number is even", () => {
+        // Arrange
+        const evenNum = 2;
+        const expected = true;
+
+        // Act
+        const result = fx.evenOdd(evenNum);
+
+        // Assert
+        expect(result).toEqual(expected);
+    });
+
+    it("returns false if number is odd", () => {
+        // Arrange
+        const oddNum = 9;
+        const expected = false;
+
+        // Act
+        const result = fx.evenOdd(oddNum);
+
+        // Assert
+        expect(result).toEqual(expected);
+    });
+
+    it("returns true if number is zero", () => {
+        // Arrange
+        const zero = 0;
+        const expected = true;
+
+        // Act
+        const result = fx.evenOdd(zero);
+
+        // Assert 
+        expect(result).toEqual(expected);
+    })
 });
