@@ -1,12 +1,7 @@
 # Project100 🚀
 
 ## WTF is this?
-Project100 is my personal challenge, my odyssey through the vast sea of programming concepts. 
-
-## That sounds super grindy? 
-That's because it is!
-
-Dabbling in something once barely scratches the surface. But immersing yourself in it 100 times? That's the ticket to truly getting it. This project is my way of hammering those concepts into my brain, ensuring that what I learn sticks.
+Project100 is my personal challenge, my odyssey through the vast sea of programming concepts. It's about embracing the grind and creating things 100 times to achieve a deeper understanding and mastery of programming.
 
 ## Why 100?
 Why not 100? It's a round, solid number that feels like a real achievement. There's no deep, philosophical reason behind it—just the cool factor of saying, "Yeah, I've done 100 of those." And that's something to be pretty proud of, if you ask me.
