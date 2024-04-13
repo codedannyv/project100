@@ -13,7 +13,19 @@ describe("add function", () => {
         const result = fx.summation(num1, num2);
 
         // Assert
-        expect(result).toEqual(expected);
+        expect(result).toBe(expected);
+    });
+    it("returns -10 when adding -8 and -2", () => {
+        // Arrage
+        const num1 = -8
+        const num2 = -2
+        const expected = -10
+
+        // Act
+        const result = fx.summation(num1, num2);
+
+        // Assert
+        expect(result).toBe(expected);
     });
 
 })
@@ -28,7 +40,7 @@ describe("convertMinutes function", () => {
         const result = fx.convertToSeconds(min);
 
         // Assert
-        expect(result).toEqual(expected);
+        expect(result).toBe(expected);
     });
 });
 
@@ -42,7 +54,7 @@ describe("even odd function", () => {
         const result = fx.evenOdd(evenNum);
 
         // Assert
-        expect(result).toEqual(expected);
+        expect(result).toBe(expected);
     });
 
     it("returns false if number is odd", () => {
@@ -54,7 +66,7 @@ describe("even odd function", () => {
         const result = fx.evenOdd(oddNum);
 
         // Assert
-        expect(result).toEqual(expected);
+        expect(result).toBe(expected);
     });
 
     it("returns true if number is zero", () => {
@@ -66,6 +78,44 @@ describe("even odd function", () => {
         const result = fx.evenOdd(zero);
 
         // Assert 
-        expect(result).toEqual(expected);
+        expect(result).toBe(expected);
     })
+});
+
+describe("Max function", () => {
+    it("takes an array of positive numbers and returns the highest number", () => {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5];
+        const expected = 5;
+
+        // Act
+        const result = fx.max(anArray);
+
+        // Assert
+        expect(result).toBe(expected);
+
+    });
+    it("takes an array of negative numbers and returns the highest number", () => {
+        // Arrange
+        const negativeArray = [-1, -2, -3, -4, -5];
+        const expected = -1;
+
+        // Act
+        const result = fx.max(negativeArray);
+
+        // Assert
+        expect(result).toBe(expected);
+    });
+    it("if array is empty returns negative infinity", () => {
+        // Arrange
+        const emptyArray = [];
+        const expected = -Infinity
+
+        // Act
+        const result = fx.max(emptyArray);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
 });
