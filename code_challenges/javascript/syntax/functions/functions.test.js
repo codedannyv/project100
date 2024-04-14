@@ -119,3 +119,17 @@ describe("Max function", () => {
     })
 
 });
+
+describe("reverseString", () => {
+    it("when given the string 'hello' it returns 'olleh'", () => {
+        // Arrange
+        const string = "hello";
+        const expected = "olleh";
+
+        // Act
+        const result = fx.reverseString(string);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+});

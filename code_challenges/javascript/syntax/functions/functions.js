@@ -29,3 +29,12 @@ export function max(arr) {
     }
     return val
 }
+
+// 5. Write a function that takes a string and returns it reversed without using the .reverse() method.
+export const reverseString = (string) => {
+    let reversed = ""
+    for (let i = (string.length - 1); i > -1; i--)  {
+        reversed += string[i]
+    }
+    return reversed
+};
