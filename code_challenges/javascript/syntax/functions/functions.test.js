@@ -175,3 +175,97 @@ describe("return nth function", () => {
     })
 
 })
+
+describe(" factorial function", () => {
+    it("when given the number zero return zero", () => {
+        // Arrange
+         const expected = 1
+
+        // Arrange
+        const result = fx.factorial(0)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+    it("when given the number 4 return 24", () => {
+        // Arrange
+        const expected = 24
+
+        // Arrange
+        const result = fx.factorial(4)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+    it("when given the number 10 return 3628800", () => {
+        // Arrange
+        const expected = 3628800
+
+        // Arrange
+        const result = fx.factorial(10)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+describe(" factorial recursion function", () => {
+    it("when given the number zero return zero", () => {
+        // Arrange
+         const expected = 1
+
+        // Arrange
+        const result = fx.factorialRecursion(0)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+    it("when given the number 4 return 24", () => {
+        // Arrange
+        const expected = 24
+
+        // Arrange
+        const result = fx.factorialRecursion(4)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+    it("when given the number 10 return 3628800", () => {
+        // Arrange
+        const expected = 3628800
+
+        // Arrange
+        const result = fx.factorialRecursion(10)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+
+describe("palidrome test function", () => {
+    it("when given hannah returns true", () => {
+        // Arrange
+        const name = "hannah";
+        const expected = true;
+        
+        // Act
+        const result = fx.palindrome(name);
+
+        // Arrange
+        expect(result).toBe(expected);
+    });
+
+    it("when given hello it returns false", () => {
+        // Arrange
+        const word = "hello";
+        const expected = false;
+        
+        // Act
+        const result = fx.palindrome(word);
+
+        // Arrange
+        expect(result).toBe(expected);
+
+    })
+})

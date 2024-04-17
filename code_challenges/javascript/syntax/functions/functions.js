@@ -47,3 +47,30 @@ export const returnElement = (arr, n) => {
     }
     return arr[n - 1]
 }
+
+
+// 7. Write a function that takes a number and returns its factorial.
+export const factorial = (n) => {
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i
+    }
+    return result
+}
+
+export const factorialRecursion = (n) => {
+    if (n === 0) {
+        return 1
+    }
+    return n * factorialRecursion(n - 1)
+}
+
+// 8. Write a function that checks if a string is a palindrome (reads the same backward as forward).
+
+export const palindrome = (word) => {
+    let result = word[word.length - 1];
+    for (let i = word.length - 2; i >= 0; i--) {
+        result += word[i]
+    }
+    return word === result
+}
