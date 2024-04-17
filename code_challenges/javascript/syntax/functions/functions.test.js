@@ -133,3 +133,45 @@ describe("reverseString", () => {
         expect(result).toBe(expected);
     })
 });
+
+describe("return nth function", () => {
+    it("when given an the integer 1 it returns the first element in the array", () => {
+        // Arrange
+        const anArray = ["first", "second", "third"];
+        const expected = "first"
+
+        // Act
+        const result = fx.returnElement(anArray, 1);
+
+        // Assert
+        expect(result).toBe(expected)
+    });
+    it("when given an integer that is greater than the size of the array return error", () => {
+        // Arrange
+        const anArray = ["first", "second", "third"];
+
+        // Act and Assert
+        expect(() => fx.returnElement(anArray, 4)).toThrowError(
+            /^Index out of bounds$/
+        )
+    })
+    it("when a given an integer that a negative number return an error", () => {
+        // Arrange
+        const anArray = ["first", "second", "third"];
+
+        // Act and Assert
+        expect(() => fx.returnElement(anArray, -1)).toThrowError(
+            /^Index out of bounds$/
+        )
+    });
+    it("when a given an integer that a 0 return an error", () => {
+        // Arrange
+        const anArray = ["first", "second", "third"];
+
+        // Act and Assert
+        expect(() => fx.returnElement(anArray, 0)).toThrowError(
+            /^Index out of bounds$/
+        )
+    })
+
+})

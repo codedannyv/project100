@@ -38,3 +38,12 @@ export const reverseString = (string) => {
     }
     return reversed
 };
+
+// 6. Write a function that takes an array and an integer n and returns the nth element of the array.
+
+export const returnElement = (arr, n) => {
+    if (n > arr.length || n <= 0) {
+        throw new Error('Index out of bounds')
+    }
+    return arr[n - 1]
+}
