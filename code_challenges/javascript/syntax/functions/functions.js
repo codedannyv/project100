@@ -74,3 +74,60 @@ export const palindrome = (word) => {
     }
     return word === result
 }
+
+// 9. Write a function that takes a string and returns the longest word in the string.
+// input: Hello, World!
+// output: World. 
+export const longestWord = (phrase) => {
+    // split phrase into words
+    const words = phrase.split(/\s+/)
+
+    // Initialize variables to keep track of longest word and it's length
+    let longest = '';
+    let maxLength = 0;
+
+    // loop through each word
+    // (let word of words)
+    // (let word in words)
+    for (let i = 0; i < words.length; i++) {
+        // remove non-alphabetic characters
+        const cleanWord = words[i].replace(/[^A-Za-z]/, '')
+
+        // if the clean word is longer than current longest word update variables
+        if (cleanWord.length > maxLength) {
+            longest = cleanWord;
+            maxLength = cleanWord.length;
+        }
+    }
+
+    return longest;
+}
+
+export const longestWord2 = (phrase) => {
+    let longest = ''
+    let currentWord = ''
+
+    for (let i = 0; i < phrase.length; i++) {
+        const char = phrase[i]
+
+        if (/[A-Za-z]/.test(char)) {
+            currentWord += char
+        } else {
+            if (currentWord.length > longest.length) {
+                longest = currentWord
+            }
+            currentWord = ''
+        }
+    }
+
+    if (currentWord.length > longest.length) {
+        longest = currentWord
+    }
+    return longest
+}
+
+const phrase = "Hey World"
+
+
+
+

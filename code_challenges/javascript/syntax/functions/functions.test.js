@@ -264,8 +264,61 @@ describe("palidrome test function", () => {
         // Act
         const result = fx.palindrome(word);
 
-        // Arrange
+        // Assert
         expect(result).toBe(expected);
 
     })
+})
+
+describe("longest word function", () => {
+
+    it("when I give it the string Hey world return world", () => {
+        // Arrange
+        const phrase = "Hey World"
+        const expected = "World"
+
+        // Act
+        const result = fx.longestWord(phrase);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+    it("when given a phrase with special characters still return the longest word", () => {
+        // Arrange
+        const phrase = "Heya, World"
+        const expected = "World"
+
+        // Act
+        const result = fx.longestWord(phrase);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+describe("longest word function without built-in", () => {
+
+    it("when I give it the string Hey world return world", () => {
+        // Arrange
+        const phrase = "Hey World"
+        const expected = "World"
+
+        // Act
+        const result = fx.longestWord2(phrase);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+    it("when given a phrase with special characters still return the longest word", () => {
+        // Arrange
+        const phrase = "Heya, World"
+        const expected = "World"
+
+        // Act
+        const result = fx.longestWord2(phrase);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+
 })
