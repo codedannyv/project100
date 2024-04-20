@@ -148,7 +148,7 @@ export function longestWordRecursion(phrase, index=0, longest='', currentWord=''
         currentWord += char
     } else {
         if (currentWord.length > longest.length) {
-            currentWord = longest
+            longest = currentWord;
         }
         currentWord = ''
     }
@@ -158,3 +158,26 @@ export function longestWordRecursion(phrase, index=0, longest='', currentWord=''
 }
 
 
+// 10. Write a function that counts the number of vowels in a string.
+export const vowelCount = (phrase) => {
+    let count = 0;
+
+    for (let i = 0; i < phrase.length; i++) {
+        if (/[AEIOUaeiou]/.test(phrase[i])) {
+            count += 1
+        }
+    }
+
+    return count
+}
+
+export function vowelCountRecursion(phrase, index=0, count=0) {
+    if (index === phrase.length) {
+        return count;
+    }
+
+    if (/[AEIOUaeiou]/.test(phrase[index])) {
+        count += 1
+    }
+    return vowelCountRecursion(phrase, index + 1, count)
+}

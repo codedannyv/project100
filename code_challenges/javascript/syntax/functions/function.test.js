@@ -417,3 +417,59 @@ describe("longest word recursive function", () => {
     })
 
 })
+
+describe("vowel function", () => {
+    it("when given the phrase hello world returns 3", () => {
+        // Arrange
+        const phrase = "hello world";
+        const expected = 3;
+        
+        // Act
+        const result = fx.vowelCount(phrase);
+
+        // Assert
+        expect(result).toBe(expected);
+
+
+    })
+    it("when given the phrase 'hey world, tonight, tomorrow'", () => {
+        // Arrange
+        const phrase = "hey world, tonight, tomorrow";
+        const expected = 7;
+        
+        // Act
+        const result = fx.vowelCount(phrase);
+
+        // Assert
+        expect(result).toBe(expected);
+
+    })
+})
+
+describe("vowel function with recursion", () => {
+    it("when given the phrase hello world returns 3", () => {
+        // Arrange
+        const phrase = "hello world";
+        const expected = 3;
+        
+        // Act
+        const result = fx.vowelCountRecursion(phrase);
+
+        // Assert
+        expect(result).toBe(expected);
+
+
+    })
+    it("when given the phrase 'hey world, tonight, tomorrow'", () => {
+        // Arrange
+        const phrase = "hey world, tonight, tomorrow";
+        const expected = 7;
+        
+        // Act
+        const result = fx.vowelCountRecursion(phrase);
+
+        // Assert
+        expect(result).toBe(expected);
+
+    })
+})
