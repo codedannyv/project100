@@ -1,6 +1,5 @@
 import { describe, it, expect } from "vitest";
-import * as fx from "./functions.js"
-
+import * as fx from "./function.js";
 
 describe("add function", () => {
     it("returns 10 when adding 8 and 2", () => {
@@ -27,8 +26,7 @@ describe("add function", () => {
         // Assert
         expect(result).toBe(expected);
     });
-
-})
+});
 
 describe("convertMinutes function", () => {
     it("when given a one minute it returns 60 seconds", () => {
@@ -43,6 +41,7 @@ describe("convertMinutes function", () => {
         expect(result).toBe(expected);
     });
 });
+
 
 describe("even odd function", () => {
     it("returns true if number is even", () => {
@@ -132,6 +131,57 @@ describe("reverseString", () => {
         // Assert
         expect(result).toBe(expected);
     })
+
+    it("when given the string 'hello world' it returns 'dlrow olleh'", () => {
+        // Arrange
+        const string = "hello world";
+        const expected = "dlrow olleh";
+
+        // Act
+        const result = fx.reverseString(string);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+});
+
+describe("reverseStringRecursion", () => {
+    it("when given the string 'hello' it returns 'olleh'", () => {
+        // Arrange
+        const string = "hello";
+        const expected = "olleh";
+
+        // Act
+        const result = fx.reverseStringRecursion(string);
+
+        // Assert
+        expect(result).toBe(expected);
+    });
+
+    it("when given the string 'hello world' it returns 'dlrow olleh'", () => {
+        // Arrange
+        const string = "hello world";
+        const expected = "dlrow olleh";
+
+        // Act
+        const result = fx.reverseStringRecursion(string);
+
+        // Assert
+        expect(result).toBe(expected);
+    });
+
+    it("when given a sentence returns the sentence reversed", () => {
+        // Arrange
+        const string = "A quick brown fox jumps over the lazy dog.";
+        const expected = ".god yzal eht revo spmuj xof nworb kciuq A";
+
+        // Act
+        const result = fx.reverseStringRecursion(string);
+
+        // Assert
+        expect(result).toBe(expected);
+
+    });
 });
 
 describe("return nth function", () => {
@@ -173,11 +223,10 @@ describe("return nth function", () => {
             /^Index out of bounds$/
         )
     })
-
-})
+});
 
 describe(" factorial function", () => {
-    it("when given the number zero return zero", () => {
+    it("when given the number zero return one", () => {
         // Arrange
          const expected = 1
 
@@ -268,57 +317,103 @@ describe("palidrome test function", () => {
         expect(result).toBe(expected);
 
     })
+
+    it("when given a phrase hello it returns false", () => {
+        // Arrange
+        const word = "hello";
+        const expected = false;
+        
+        // Act
+        const result = fx.palindrome(word);
+
+        // Assert
+        expect(result).toBe(expected);
+
+    })
+})
+
+describe("palidrome test function", () => {
+    it("when given hannah returns true", () => {
+        // Arrange
+        const name = "hannah";
+        const expected = true;
+        
+        // Act
+        const result = fx.palindromeRecursion(name);
+
+        // Arrange
+        expect(result).toBe(expected);
+    });
+
+    it("when given hello it returns false", () => {
+        // Arrange
+        const word = "hello";
+        const expected = false;
+        
+        // Act
+        const result = fx.palindromeRecursion(word);
+
+        // Assert
+        expect(result).toBe(expected);
+
+    })
+
 })
 
 describe("longest word function", () => {
-
-    it("when I give it the string Hey world return world", () => {
+    it("when given the phrase hey world return world", () => {
         // Arrange
-        const phrase = "Hey World"
-        const expected = "World"
-
+        const phrase = "hey world";
+        const expected = "world";
+        
         // Act
         const result = fx.longestWord(phrase);
 
         // Assert
-        expect(result).toBe(expected)
-    })
-    it("when given a phrase with special characters still return the longest word", () => {
-        // Arrange
-        const phrase = "Heya, World"
-        const expected = "World"
+        expect(result).toBe(expected);
 
+    })
+
+    it("when given the phrase 'hey world, tonight, tomorrow'", () => {
+        // Arrange
+        const phrase = "hey world, tonight, tomorrow";
+        const expected = "tomorrow";
+        
         // Act
         const result = fx.longestWord(phrase);
 
         // Assert
-        expect(result).toBe(expected)
+        expect(result).toBe(expected);
+
     })
+
 })
 
-describe("longest word function without built-in", () => {
-
-    it("when I give it the string Hey world return world", () => {
+describe("longest word recursive function", () => {
+    it("when given the phrase hey world return world", () => {
         // Arrange
-        const phrase = "Hey World"
-        const expected = "World"
-
+        const phrase = "hey world";
+        const expected = "world";
+        
         // Act
-        const result = fx.longestWord2(phrase);
+        const result = fx.longestWordRecursion(phrase);
 
         // Assert
-        expect(result).toBe(expected)
+        expect(result).toBe(expected);
+
     })
-    it("when given a phrase with special characters still return the longest word", () => {
-        // Arrange
-        const phrase = "Heya, World"
-        const expected = "World"
 
+    it("when given the phrase 'hey world, tonight, tomorrow'", () => {
+        // Arrange
+        const phrase = "hey world, tonight, tomorrow";
+        const expected = "tomorrow";
+        
         // Act
-        const result = fx.longestWord2(phrase);
+        const result = fx.longestWordRecursion(phrase);
 
         // Assert
-        expect(result).toBe(expected)
+        expect(result).toBe(expected);
+
     })
 
 })
