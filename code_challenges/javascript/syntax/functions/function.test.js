@@ -473,3 +473,141 @@ describe("vowel function with recursion", () => {
 
     })
 })
+
+describe("include function", () => {
+    it("when given a word in the arr return true", () => {
+        // Arrange
+        const places = ["first", "second", 3]
+        const expected = true;
+        
+        // Act
+        const result = fx.myInclude(places, 3);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    it("when given a word not in the arr return false", () => {
+        // Arrange
+        const places = ["first", "second", 3]
+        const expected = false;
+        
+        // Act
+        const result = fx.myInclude(places, 'fourth');
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+})
+
+describe("FizzBuzz function", () => {
+    it("returns 'Fizz' for multiples of 3 only", () => {
+        // Arrange
+        const expected = ["1", "2", "Fizz", "4", "Buzz"];
+        
+        // Act
+        const result = fx.FizzBuzz(5);
+
+        // Assert
+        expect(result[2]).toBe(expected[2]); // Checking just the third element for "Fizz"
+    });
+
+    it("returns 'Buzz' for multiples of 5 only", () => {
+        // Arrange
+        const expected = ["1", "2", "Fizz", "4", "Buzz"];
+        
+        // Act
+        const result = fx.FizzBuzz(5);
+
+        // Assert
+        expect(result[4]).toBe(expected[4]); // Checking just the fifth element for "Buzz"
+    });
+
+    it("returns 'FizzBuzz' for multiples of both 3 and 5", () => {
+        // Arrange
+        const expected = "FizzBuzz";
+        
+        // Act
+        const result = fx.FizzBuzz(15);
+
+        // Assert
+        expect(result[14]).toBe(expected); // Checking the 15th element
+    });
+
+    it("returns the number itself if not a multiple of 3 or 5", () => {
+        // Arrange
+        const expected = "1";
+        
+        // Act
+        const result = fx.FizzBuzz(1);
+
+        // Assert
+        expect(result[0]).toBe(expected); // Checking the first element
+    });
+});
+
+describe("sum of array", () => {
+    it("takes in an array and returns the sum of all values",() =>  {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const expected = 55
+
+        // Act
+        const result = fx.sumArray(anArray);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+describe("isPrime function", () => {
+    it("when given a prime number it returns true", () => {
+        // Arrange
+        const prime = 7;
+        const expected = true;
+
+        // Act
+        const result = fx.isPrime(prime);
+
+        // Asssert
+        expect(result).toBe(expected);
+    })
+
+    it("when given a non-prime number it returns false", () => {
+        // Arrange
+        const notPrime = 8;
+        const expected = false;
+
+        // Act
+        const result = fx.isPrime(notPrime);
+
+        // Asssert
+        expect(result).toBe(expected);
+    })
+
+    it("when given 229 returns false", () => {
+        // Arrange
+        const prime = 229
+        const expected = true;
+
+        // Act
+        const result = fx.isPrime(prime);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+describe("sclicing function", () => {
+    it("when given a start and end index returns the values between those two indexes in an array", () => {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5, 6]
+        const expected = [2, 3, 4]
+
+        // Act
+        const result = fx.mySlice(anArray, 1, 3)
+
+        // Assert
+        expect(result).toEqual(expected)
+    }) 
+})

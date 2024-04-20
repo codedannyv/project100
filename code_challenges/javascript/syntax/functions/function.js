@@ -181,3 +181,83 @@ export function vowelCountRecursion(phrase, index=0, count=0) {
     }
     return vowelCountRecursion(phrase, index + 1, count)
 }
+
+
+// 11. Write a function that mimics the JavaScript .includes() method. It should take an array and a value and return true if the value is in the array.
+
+export function myInclude(arr, sub) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === sub) {
+            return true
+        }
+    }
+    return false
+
+}
+
+
+// 12. Write a function that prints every number from 1 to n. For multiples of 3, print "Fizz" instead of the number, and for the multiples of 5, print "Buzz". For numbers which are multiples of both three and five, print "FizzBuzz".
+
+export const FizzBuzz = (n) => {
+    let result = [];
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            result.push("FizzBuzz")
+        } else if (i % 3 === 0) {
+            result.push("Fizz")
+        } else if (i % 5 === 0) {
+            result.push("Buzz")
+        } else {
+            result.push(String(i))
+        }
+    }
+    return result
+}
+
+//13. Write a function that takes an array of numbers and returns the sum of all elements.
+export const sumArray = (arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum 
+}
+
+// 14. Write a function that takes a number and returns true if it is a prime number and false otherwise.
+export const isPrime = (num) => {
+    // Check for 0 or 1
+    if (num <= 1) {
+        return false;
+    };
+
+    // Check for 2 and 3
+    if (num <= 3) {
+        return true;
+    };
+
+    // Check numbers divisible by two or three
+    if (num % 2 === 0 || num % 3 === 0) {
+        return false;
+    };
+
+    // 
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) {
+            return false
+        }
+    }
+
+    return true
+}
+
+
+// 15. Write a function that mimics the JavaScript .slice() method for arrays. It should take an array, a start index, and an optional end index and return a new array.
+export function mySlice(arr, start, end) {
+    let a = []
+    for(let i = start; i <= end; i++) {
+        a.push(arr[i])
+    }
+    return a
+}
+
+
