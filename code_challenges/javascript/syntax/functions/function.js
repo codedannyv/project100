@@ -250,7 +250,6 @@ export const isPrime = (num) => {
     return true
 }
 
-
 // 15. Write a function that mimics the JavaScript .slice() method for arrays. It should take an array, a start index, and an optional end index and return a new array.
 export function mySlice(arr, start, end) {
     let a = []
@@ -260,4 +259,47 @@ export function mySlice(arr, start, end) {
     return a
 }
 
+// 16. Write a function that converts Celsius to Fahrenheit.
+export const toFahrenheit = (num) => {
+    return num * (9/5) + 32
+}
+
+// 17. Write a function that converts Celsius to Fahrenheit.
+export const toCelsius = (num) => {
+    return (num - 32) * (5/9)
+}
+
+// 18. Write a function that counts how many times a particular element appears in an array.
+export function howMany(arr, n) {
+    let result = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === n) {
+            result += 1
+        }
+    }
+
+    return result
+}
+
+// 19. Write a function that mimics the .indexOf() method. It should take an array and a value and return the first index at which the value exists, or -1 if it's not in the array.
+
+export const myIndexOf = (arr, val, n=0) => {
+    let result = arr[n]
+
+    if (arr[n] === val) {
+        return n
+    }
+
+    for (let i = n + 1; i < arr.length; i++) {
+        if (arr[i] === val) {
+            return i
+        } 
+    }
+
+    return -1
+}
+
+
+// 20. Write a function that takes two arrays and returns a new array that is the union of the two arrays with duplicates removed.
 

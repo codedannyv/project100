@@ -611,3 +611,96 @@ describe("sclicing function", () => {
         expect(result).toEqual(expected)
     }) 
 })
+
+describe("celcius function", () => {
+    it("when given zero return 32", () => {
+        // Arrange
+        const celcius = 0;
+        const expected = 32;
+
+        // Act
+        const result = fx.toFahrenheit(celcius);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+})
+
+describe("fahrenheit function", () => {
+    it("when given 32 return zero", () => {
+        // Arrange
+        const fahrenheit = 32;
+        const expected = 0;
+
+        // Act
+        const result = fx.toCelsius(fahrenheit);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+})
+
+describe("how many function", () => {
+    it("when given an array with three repeats return 3", () => {
+        // Arrange
+        const anArray = [1, 1, 2, 3, 5]
+        const expected = 2
+
+        // Act
+        const result = fx.howMany(anArray, 1)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+
+    it("when given a value that doesn't exist in the array return 0", () => {
+        // Arrange
+        const anArray = [1, 1, 2, 3, 5]
+        const expected = 0
+
+        // Act
+        const result = fx.howMany(anArray, 0)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+describe("myIndexOf function", () => {
+    it("when given an array return first index where 'first' exists", () => {
+        // Arrange
+        const anArray = ["fifth", "fourth", "first", "second", "first"]
+        const expected = 2
+
+        // Act
+        const result = fx.myIndexOf(anArray, "first")
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+
+    it("when given an array and an index return next index where 'first' exists", () => {
+        // Arrange
+        const anArray = ["fifth", "fourth", "first", "second", "first"]
+        const expected = 4
+
+        // Act
+        const result = fx.myIndexOf(anArray, "first", 3)
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+
+
+    it("when given a value that doesn't exist in the array return -1", () => {
+        // Arrange
+        const anArray = ["fifth", "fourth", "first", "second", "first"]
+        const expected = -1
+
+        // Act
+        const result = fx.myIndexOf(anArray, "sixth")
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
