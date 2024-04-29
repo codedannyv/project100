@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import * as fx from "./function.js";
+import { describe, it, expect } from 'vitest';
+import * as fx from "./functions.js";
 
 describe("add function", () => {
     it("returns 10 when adding 8 and 2", () => {
@@ -560,6 +560,21 @@ describe("sum of array", () => {
     })
 })
 
+describe("sum of array using recursion", () => {
+    it("takes in an array and returns the sum of all values",() =>  {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const expected = 55
+
+        // Act
+        const result = fx.sumArrayRecursion(anArray);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+
 describe("isPrime function", () => {
     it("when given a prime number it returns true", () => {
         // Arrange
@@ -606,6 +621,20 @@ describe("sclicing function", () => {
 
         // Act
         const result = fx.mySlice(anArray, 1, 3)
+
+        // Assert
+        expect(result).toEqual(expected)
+    }) 
+})
+
+describe("sclicing function recursion", () => {
+    it("when given a start and end index returns the values between those two indexes in an array", () => {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5, 6]
+        const expected = [2, 3, 4]
+
+        // Act
+        const result = fx.mySliceRecursion(anArray, 1, 3)
 
         // Assert
         expect(result).toEqual(expected)
@@ -702,5 +731,61 @@ describe("myIndexOf function", () => {
 
         // Assert
         expect(result).toBe(expected)
+    })
+})
+
+describe("myJoin function", () => {
+    it("when given two integer arrays returns a new array that is the union of the two with no duplicates", ()  => {
+        // Arrange
+        const array1 = [1, 2, 3, 4, 5]
+        const array2 = [1, 6, 7, 8, 5]
+        const expected = [1, 2, 3, 4, 5, 6, 7, 8]
+
+        // Act
+        const result = fx.myJoin(array1, array2)
+
+        // Assert
+        expect(result).toEqual(expected)
+    })
+
+    it("when given two integer arrays returns a new array that is the union of the two with no duplicates", ()  => {
+        // Arrange
+        const array1 = ["one", "two", "three", "four", "five"];
+        const array2 = ["one", "six", "seven", "eight", "five"];
+        const expected = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+
+        // Act
+        const result = fx.myJoin(array1, array2)
+
+        // Assert
+        expect(result).toEqual(expected)
+    })
+})
+
+describe("even numbers function", () => {
+    it("given an array we need to return the even numbers in the array", () => {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5, 6];
+        const expected = [2, 4, 6];
+        
+        // Act
+        const result = fx.evenArray(anArray)
+
+        // Assert
+        expect(result).toEqual(expected)
+    })
+})
+
+describe("even numbers function with Recursion", () => {
+    it("given an array we need to return the even numbers in the array", () => {
+        // Arrange
+        const anArray = [1, 2, 3, 4, 5, 6];
+        const expected = [2, 4, 6];
+        
+        // Act
+        const result = fx.evenArrayRecursion(anArray)
+
+        // Assert
+        expect(result).toEqual(expected)
     })
 })

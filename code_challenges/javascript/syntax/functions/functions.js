@@ -222,33 +222,38 @@ export const sumArray = (arr) => {
     }
     return sum 
 }
+// use recursion
+// export const sumarrayRecursion
+export function sumArrayRecursion(arr, index=0, sum=0) {
+    if (index === arr.length) {
+        return sum
+    }
+    sum += arr[index]
+    return sumArrayRecursion(arr, index + 1, sum) 
+}
 
 // 14. Write a function that takes a number and returns true if it is a prime number and false otherwise.
-export const isPrime = (num) => {
-    // Check for 0 or 1
-    if (num <= 1) {
-        return false;
-    };
+export const isPrime = (n) => {
+    if (n <= 1) {
+        return false
+    }
+    if (n === 2 || n === 3) {
+        return true
+    }
 
-    // Check for 2 and 3
-    if (num <= 3) {
-        return true;
-    };
+    if (n % 2 === 0 || n % 3 === 0) {
+        return false
+    }
 
-    // Check numbers divisible by two or three
-    if (num % 2 === 0 || num % 3 === 0) {
-        return false;
-    };
-
-    // 
-    for (let i = 5; i * i <= num; i += 6) {
-        if (num % i === 0 || num % (i + 2) === 0) {
+    for (let i = 5; i * i <= n; i += 6) {
+        if (n % i === 0 || n % (i + 2) === 0) {
             return false
         }
     }
 
     return true
 }
+
 
 // 15. Write a function that mimics the JavaScript .slice() method for arrays. It should take an array, a start index, and an optional end index and return a new array.
 export function mySlice(arr, start, end) {
@@ -258,6 +263,17 @@ export function mySlice(arr, start, end) {
     }
     return a
 }
+
+// use recursion
+export const mySliceRecursion = (arr, start, end, result=[]) => {
+    if (result.length === (end - start + 1)) {
+        return result
+    }
+
+    // result = [...result + arr[start]]
+    return mySliceRecursion(arr, start+1, end, result)
+}
+
 
 // 16. Write a function that converts Celsius to Fahrenheit.
 export const toFahrenheit = (num) => {
@@ -270,36 +286,74 @@ export const toCelsius = (num) => {
 }
 
 // 18. Write a function that counts how many times a particular element appears in an array.
-export function howMany(arr, n) {
-    let result = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === n) {
-            result += 1
+// 19. Write a function that mimics the .indexOf() method. It should take an array and a value and return the first index at which the value exists, or -1 if it's not in the array.
+export const myIndexOf = (arr, val, index=0) => {
+    for (let i = index; i < arr.length; i++) {
+        if (arr[i] === val) {
+            return i
+        }
+    }
+
+    return -1;
+}
+
+// 20. Write a function that takes two arrays and returns a new array that is the union of the two arrays with duplicates removed.
+export const myJoin = (arr1, arr2) => {
+    let result = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (!result.includes(arr1[i])) {
+             result.push(arr1[i])
+        }
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+        if (!result.includes(arr2[i])) {
+             result.push(arr2[i])
         }
     }
 
     return result
 }
 
-// 19. Write a function that mimics the .indexOf() method. It should take an array and a value and return the first index at which the value exists, or -1 if it's not in the array.
+// 21. Write a function that takes an array of numbers and returns an array containing only the even numbers from the original array.
+export const evenArray = (arr) => {
+    let result = [];
 
-export const myIndexOf = (arr, val, n=0) => {
-    let result = arr[n]
-
-    if (arr[n] === val) {
-        return n
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            result.push(arr[i]);
+        }
     }
 
-    for (let i = n + 1; i < arr.length; i++) {
-        if (arr[i] === val) {
-            return i
-        } 
+    return result;
+}
+
+// Recursion
+export function evenArrayRecursion(arr, start=0, result=[]) {
+    if (start === arr.length) {
+        return result
     }
 
-    return -1
+    if (arr[start] % 2 === 0) {
+        result.push(arr[start])
+    }
+
+    return evenArrayRecursion(arr, start+1, result)
 }
 
 
-// 20. Write a function that takes two arrays and returns a new array that is the union of the two arrays with duplicates removed.
+// 101. Write a function that returns a random number between two numbers (inclusive)
+const randomFive = (min, max) => {
+    let inclusive = max + 1
+    let result = [];
+
+    for (let i = 1; i <= 5; i++) {
+        result.push(Math.floor(Math.random() * (inclusive - min) + min))
+    }
+
+    console.log(result)
+}
+
 
