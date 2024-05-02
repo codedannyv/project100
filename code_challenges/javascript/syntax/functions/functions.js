@@ -361,7 +361,23 @@ export function evenArrayRecursion(arr, start=0, result=[]) {
 
 
 // 23. Develop a function that takes two arguments: an array of strings and a single character (string of length 1). The function should return a new array containing only the strings from the input array that start with the specified character.
+// input: array, string
+// output: array
+export const findString = (arr, char) => {
+    let result = [];
 
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i][0] === char) {
+            result.push(arr[i]);
+        };
+    };
+
+    return result;
+}
+
+
+// 24. Write a function that calculates the number of days between two dates. The dates will be passed to the function as strings in the format "YYYY-MM-DD".
+export const 
 
 
 // 101. Write a function that returns a random number between two numbers (inclusive)

@@ -803,3 +803,49 @@ describe("myToUpperCase function", () => {
         expect(result).toBe(expected)
     })
 })
+
+describe("find string in array function", () => {
+    it("when given an array and a single char return new array with only strings from the input arry athat start with the specificied character", () => {
+        // Arrange
+        const colors = ["Blue", "Black", "Orange", "Grey", "Red"];
+        const expected = ["Blue", "Black"];
+
+        // Act
+        const result = fx.findString(colors, "B");
+
+        // Assert
+        expect(result).toEqual(expected);
+    })
+})
+
+describe('calculateDaysBetweenDates', () => {
+    it('should calculate the number of days between two dates in the same year', () => {
+      const result = calculateDaysBetweenDates("2023-01-01", "2023-01-31");
+      expect(result).toBe(30);
+    });
+  
+    it('should calculate the number of days between two dates across different years', () => {
+      const result = calculateDaysBetweenDates("2022-12-31", "2023-01-01");
+      expect(result).toBe(1);
+    });
+  
+    it('should handle leap year dates correctly', () => {
+      const result = calculateDaysBetweenDates("2020-02-01", "2020-03-01");
+      expect(result).toBe(29); // February 2020 had 29 days
+    });
+  
+    it('should return 0 when the same date is passed twice', () => {
+      const result = calculateDaysBetweenDates("2023-05-01", "2023-05-01");
+      expect(result).toBe(0);
+    });
+  
+    it('should handle a span of multiple years correctly', () => {
+      const result = calculateDaysBetweenDates("2020-01-01", "2023-01-01");
+      expect(result).toBe(1096); // Includes two leap years (2020, 2024)
+    });
+  
+    it('should return the correct number of days regardless of date order', () => {
+      const result = calculateDaysBetweenDates("2023-01-01", "2022-01-01");
+      expect(result).toBe(365); // Non-leap year span backwards
+    });
+  });
