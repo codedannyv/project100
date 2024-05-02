@@ -789,3 +789,17 @@ describe("even numbers function with Recursion", () => {
         expect(result).toEqual(expected)
     })
 })
+
+describe("myToUpperCase function", () => {
+    it("when given the word 'Hello World' it returns 'HELLO WORLD'", () => {
+        // Arrange
+        const word = "Hello World";
+        const expected = "HELLO WORLD";
+
+        // Act
+        const result = fx.myToUpperCase(word);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})

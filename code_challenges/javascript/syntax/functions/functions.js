@@ -266,11 +266,11 @@ export function mySlice(arr, start, end) {
 
 // use recursion
 export const mySliceRecursion = (arr, start, end, result=[]) => {
-    if (result.length === (end - start + 1)) {
+    if (start === (end + 1)) {
         return result
     }
 
-    // result = [...result + arr[start]]
+    result.push(arr[start])
     return mySliceRecursion(arr, start+1, end, result)
 }
 
@@ -286,6 +286,16 @@ export const toCelsius = (num) => {
 }
 
 // 18. Write a function that counts how many times a particular element appears in an array.
+export const howMany = (arr, val) => {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === val) {
+            count += 1;
+        };
+    };
+
+    return count;
+};
 
 // 19. Write a function that mimics the .indexOf() method. It should take an array and a value and return the first index at which the value exists, or -1 if it's not in the array.
 export const myIndexOf = (arr, val, index=0) => {
@@ -343,6 +353,16 @@ export function evenArrayRecursion(arr, start=0, result=[]) {
     return evenArrayRecursion(arr, start+1, result)
 }
 
+// 22. Create a function that accepts a string as its argument and returns the string in uppercase. Try to do this without using the .toUpperCase() method.
+
+
+// use recursion
+
+
+
+// 23. Develop a function that takes two arguments: an array of strings and a single character (string of length 1). The function should return a new array containing only the strings from the input array that start with the specified character.
+
+
 
 // 101. Write a function that returns a random number between two numbers (inclusive)
 const randomFive = (min, max) => {
@@ -357,3 +377,6 @@ const randomFive = (min, max) => {
 }
 
 
+
+const anArray = [1, 2, 3, 4, 5, 6];
+mySliceRecursion(anArray, 1, 3)
