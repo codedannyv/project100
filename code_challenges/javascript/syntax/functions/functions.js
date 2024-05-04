@@ -375,21 +375,33 @@ export const findString = (arr, char) => {
     return result;
 }
 
+// use recursion
+
+
 
 // 24. Write a function that calculates the number of days between two dates. The dates will be passed to the function as strings in the format "YYYY-MM-DD".
-export const 
+// input: two dates:
+// output: total days between two dates
+export function calculateDaysBetweenDates(date1, date2) {
+
+}
+
+// 25. Construct a function that takes a positive integer as its argument and returns an array of all the integers that are both less than the input and prime. Use the function you wrote for checking if a number is prime from the previous set of challenges, if needed.
+// input: positive integer
+// output: array with all the primes less than that 
+
 
 
 // 101. Write a function that returns a random number between two numbers (inclusive)
-const randomFive = (min, max) => {
-    let inclusive = max + 1
+function randomFive(min, max) {
+    let inclusive = max + 1;
     let result = [];
 
     for (let i = 1; i <= 5; i++) {
-        result.push(Math.floor(Math.random() * (inclusive - min) + min))
+        result.push(Math.floor(Math.random() * (inclusive - min) + min));
     }
 
-    console.log(result)
+    console.log(result);
 }
 
 
