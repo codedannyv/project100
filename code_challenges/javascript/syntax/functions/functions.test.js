@@ -849,3 +849,11 @@ describe('calculateDaysBetweenDates', () => {
       expect(result).toBe(365); // Non-leap year span backwards
     });
   });
+
+describe("prime array function", () => {
+    it("when given a positive integer it returns all of the primes less than that integer", () => {
+        // Arrage
+        const integer = 27;
+        const expected = []
+    })
+})
