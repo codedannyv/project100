@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import * as fx from "./functions.js";
 
-describe("add function", () => {
+describe("1. add function", () => {
     it("returns 10 when adding 8 and 2", () => {
         // Arrage
         const num1 = 8
@@ -28,7 +28,7 @@ describe("add function", () => {
     });
 });
 
-describe("convertMinutes function", () => {
+describe("2. convertMinutes function", () => {
     it("when given a one minute it returns 60 seconds", () => {
         // Arrange
         const min = 1;
@@ -43,7 +43,7 @@ describe("convertMinutes function", () => {
 });
 
 
-describe("even odd function", () => {
+describe("3. even odd function", () => {
     it("returns true if number is even", () => {
         // Arrange
         const evenNum = 2;
@@ -81,7 +81,7 @@ describe("even odd function", () => {
     })
 });
 
-describe("Max function", () => {
+describe("4. Max function", () => {
     it("takes an array of positive numbers and returns the highest number", () => {
         // Arrange
         const anArray = [1, 2, 3, 4, 5];
@@ -119,7 +119,7 @@ describe("Max function", () => {
 
 });
 
-describe("reverseString", () => {
+describe("5. reverseString", () => {
     it("when given the string 'hello' it returns 'olleh'", () => {
         // Arrange
         const string = "hello";
@@ -145,7 +145,7 @@ describe("reverseString", () => {
     })
 });
 
-describe("reverseStringRecursion", () => {
+describe("5b. reverseStringRecursion", () => {
     it("when given the string 'hello' it returns 'olleh'", () => {
         // Arrange
         const string = "hello";
@@ -184,7 +184,7 @@ describe("reverseStringRecursion", () => {
     });
 });
 
-describe("return nth function", () => {
+describe("6. return nth function", () => {
     it("when given an the integer 1 it returns the first element in the array", () => {
         // Arrange
         const anArray = ["first", "second", "third"];
@@ -225,7 +225,7 @@ describe("return nth function", () => {
     })
 });
 
-describe(" factorial function", () => {
+describe("7. factorial function", () => {
     it("when given the number zero return one", () => {
         // Arrange
          const expected = 1
@@ -258,7 +258,7 @@ describe(" factorial function", () => {
     })
 })
 
-describe(" factorial recursion function", () => {
+describe("7b. factorial recursion function", () => {
     it("when given the number zero return zero", () => {
         // Arrange
          const expected = 1
@@ -292,7 +292,7 @@ describe(" factorial recursion function", () => {
 })
 
 
-describe("palidrome test function", () => {
+describe("8. palidrome test function", () => {
     it("when given hannah returns true", () => {
         // Arrange
         const name = "hannah";
@@ -332,7 +332,7 @@ describe("palidrome test function", () => {
     })
 })
 
-describe("palidrome test function", () => {
+describe("8a. palidrome function recursion", () => {
     it("when given hannah returns true", () => {
         // Arrange
         const name = "hannah";
@@ -360,7 +360,7 @@ describe("palidrome test function", () => {
 
 })
 
-describe("longest word function", () => {
+describe("9. longest word function", () => {
     it("when given the phrase hey world return world", () => {
         // Arrange
         const phrase = "hey world";
@@ -389,7 +389,7 @@ describe("longest word function", () => {
 
 })
 
-describe("longest word recursive function", () => {
+describe("9a. longest word recursive function", () => {
     it("when given the phrase hey world return world", () => {
         // Arrange
         const phrase = "hey world";
@@ -418,7 +418,7 @@ describe("longest word recursive function", () => {
 
 })
 
-describe("vowel function", () => {
+describe("10. vowel function", () => {
     it("when given the phrase hello world returns 3", () => {
         // Arrange
         const phrase = "hello world";
@@ -446,7 +446,7 @@ describe("vowel function", () => {
     })
 })
 
-describe("vowel function with recursion", () => {
+describe("10b. vowel function with recursion", () => {
     it("when given the phrase hello world returns 3", () => {
         // Arrange
         const phrase = "hello world";
@@ -474,7 +474,7 @@ describe("vowel function with recursion", () => {
     })
 })
 
-describe("include function", () => {
+describe("11. include function", () => {
     it("when given a word in the arr return true", () => {
         // Arrange
         const places = ["first", "second", 3]
@@ -500,7 +500,7 @@ describe("include function", () => {
     })
 })
 
-describe("FizzBuzz function", () => {
+describe("12. FizzBuzz function", () => {
     it("returns 'Fizz' for multiples of 3 only", () => {
         // Arrange
         const expected = ["1", "2", "Fizz", "4", "Buzz"];
@@ -546,7 +546,7 @@ describe("FizzBuzz function", () => {
     });
 });
 
-describe("sum of array", () => {
+describe("13. sum of array", () => {
     it("takes in an array and returns the sum of all values",() =>  {
         // Arrange
         const anArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -560,7 +560,7 @@ describe("sum of array", () => {
     })
 })
 
-describe("sum of array using recursion", () => {
+describe("13a. sum of array using recursion", () => {
     it("takes in an array and returns the sum of all values",() =>  {
         // Arrange
         const anArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -568,14 +568,14 @@ describe("sum of array using recursion", () => {
 
         // Act
         const result = fx.sumArrayRecursion(anArray);
-
+ 
         // Assert
         expect(result).toBe(expected)
     })
 })
 
 
-describe("isPrime function", () => {
+describe("14. isPrime function", () => {
     it("when given a prime number it returns true", () => {
         // Arrange
         const prime = 7;
@@ -613,7 +613,7 @@ describe("isPrime function", () => {
     })
 })
 
-describe("sclicing function", () => {
+describe("15. sclicing function", () => {
     it("when given a start and end index returns the values between those two indexes in an array", () => {
         // Arrange
         const anArray = [1, 2, 3, 4, 5, 6]
@@ -627,7 +627,7 @@ describe("sclicing function", () => {
     }) 
 })
 
-describe("sclicing function recursion", () => {
+describe("15b. sclicing function recursion", () => {
     it("when given a start and end index returns the values between those two indexes in an array", () => {
         // Arrange
         const anArray = [1, 2, 3, 4, 5, 6]
@@ -641,7 +641,7 @@ describe("sclicing function recursion", () => {
     }) 
 })
 
-describe("celcius function", () => {
+describe("16. celcius function", () => {
     it("when given zero return 32", () => {
         // Arrange
         const celcius = 0;
@@ -655,7 +655,7 @@ describe("celcius function", () => {
     })
 })
 
-describe("fahrenheit function", () => {
+describe("17. fahrenheit function", () => {
     it("when given 32 return zero", () => {
         // Arrange
         const fahrenheit = 32;
@@ -669,7 +669,7 @@ describe("fahrenheit function", () => {
     })
 })
 
-describe("how many function", () => {
+describe("18. how many function", () => {
     it("when given an array with three repeats return 3", () => {
         // Arrange
         const anArray = [1, 1, 2, 3, 5]
@@ -695,7 +695,7 @@ describe("how many function", () => {
     })
 })
 
-describe("myIndexOf function", () => {
+describe("19. myIndexOf function", () => {
     it("when given an array return first index where 'first' exists", () => {
         // Arrange
         const anArray = ["fifth", "fourth", "first", "second", "first"]
@@ -734,7 +734,7 @@ describe("myIndexOf function", () => {
     })
 })
 
-describe("myJoin function", () => {
+describe("20. myJoin function", () => {
     it("when given two integer arrays returns a new array that is the union of the two with no duplicates", ()  => {
         // Arrange
         const array1 = [1, 2, 3, 4, 5]
@@ -762,7 +762,7 @@ describe("myJoin function", () => {
     })
 })
 
-describe("even numbers function", () => {
+describe("21. even numbers function", () => {
     it("given an array we need to return the even numbers in the array", () => {
         // Arrange
         const anArray = [1, 2, 3, 4, 5, 6];
@@ -776,7 +776,7 @@ describe("even numbers function", () => {
     })
 })
 
-describe("even numbers function with Recursion", () => {
+describe("21b. even numbers function with Recursion", () => {
     it("given an array we need to return the even numbers in the array", () => {
         // Arrange
         const anArray = [1, 2, 3, 4, 5, 6];
@@ -790,7 +790,7 @@ describe("even numbers function with Recursion", () => {
     })
 })
 
-describe("myToUpperCase function", () => {
+describe("22. myToUpperCase function", () => {
     it("when given the word 'Hello World' it returns 'HELLO WORLD'", () => {
         // Arrange
         const word = "Hello World";
@@ -804,7 +804,21 @@ describe("myToUpperCase function", () => {
     })
 })
 
-describe("find string in array function", () => {
+describe("22b. myToUpperCase function recursion", () => {
+    it("when given the word 'Hello World' it returns 'HELLO WORLD'", () => {
+        // Arrange
+        const word = "Hello World";
+        const expected = "HELLO WORLD";
+
+        // Act
+        const result = fx.myToUpperCaseRecursion(word);
+
+        // Assert
+        expect(result).toBe(expected)
+    })
+})
+
+describe("23. find string in array function", () => {
     it("when given an array and a single char return new array with only strings from the input arry athat start with the specificied character", () => {
         // Arrange
         const colors = ["Blue", "Black", "Orange", "Grey", "Red"];
@@ -818,7 +832,7 @@ describe("find string in array function", () => {
     })
 })
 
-describe('calculateDaysBetweenDates', () => {
+describe('24. calculateDaysBetweenDates', () => {
     it('should calculate the number of days between two dates in the same year', () => {
       const result = fx.calculateDaysBetweenDates("2023-01-01", "2023-01-31");
       expect(result).toBe(30);

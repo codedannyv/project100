@@ -41,6 +41,7 @@ export const reverseString = (word) => {
     return result;
 }
 
+
 export function reverseStringRecursion(word, start=1) {
     if (start === word.length) {
         return word[0]
@@ -354,6 +355,24 @@ export function evenArrayRecursion(arr, start=0, result=[]) {
 }
 
 // 22. Create a function that accepts a string as its argument and returns the string in uppercase. Try to do this without using the .toUpperCase() method.
+// input: "Hello world"
+// output: "HELLO WORLD"
+// Uppercase ASCII range: (65-90)
+// Lowercase ASCII range: (97-122)
+export const myToUpperCase = (string) => {
+    let result = '';
+
+    for (let i = 0; i < string.length; i++) {
+        if (char >= 97 && char <= 122) {
+            result += String.fromCharCode(char - 32)
+        } else {
+            result += string[i]
+        }
+    }
+
+    return result;
+}
+
 
 
 // use recursion
@@ -406,5 +425,3 @@ function randomFive(min, max) {
 
 
 
-const anArray = [1, 2, 3, 4, 5, 6];
-mySliceRecursion(anArray, 1, 3)
