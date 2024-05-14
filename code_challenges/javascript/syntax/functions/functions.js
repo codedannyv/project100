@@ -363,8 +363,9 @@ export const myToUpperCase = (string) => {
     let result = '';
 
     for (let i = 0; i < string.length; i++) {
-        if (char >= 97 && char <= 122) {
-            result += String.fromCharCode(char - 32)
+        if (string.charCodeAt(i) >= 97 && string.charCodeAt(i) <= 122) {
+            let charCode = string.charCodeAt(i)
+            result += String.fromCharCode(charCode - 32)
         } else {
             result += string[i]
         }
@@ -373,9 +374,22 @@ export const myToUpperCase = (string) => {
     return result;
 }
 
-
-
 // use recursion
+
+export function myToUpperCaseRecursion(string, i=0, result='') {
+    if (result.length === string.length) {
+        return result
+    }
+
+    if (string.charCodeAt(i) >= 97 && string.charCodeAt(i) <= 122) {
+        let charCode = string.charCodeAt(i)
+        result += String.fromCharCode(charCode - 32)
+    } else {
+        result += string[i]
+    }
+
+    return myToUpperCase(string, i + 1, result);
+}
 
 
 
@@ -401,8 +415,43 @@ export const findString = (arr, char) => {
 // 24. Write a function that calculates the number of days between two dates. The dates will be passed to the function as strings in the format "YYYY-MM-DD".
 // input: two dates:
 // output: total days between two dates
-export function calculateDaysBetweenDates(date1, date2) {
 
+function daysInYear(year) {
+    return 365 * year + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)
+}
+
+console.log(daysInYear(1))
+console.log(daysInYear(2))
+console.log(daysInYear(3))
+console.log(daysInYear(4))
+console.log(daysInYear(5))
+
+
+export function calculateDaysBetweenDates(date1, date2) {
+    function isLeapYear (year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    }
+
+    let [year1, month1, day1] = date1.split('-').map(Number);
+    let [year2, month2, day2] = date2.split('-').map(Number);
+    // Calculate the number of days for each year
+    function daysInYear(year) {
+        return 365 * year + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)
+    }
+
+    function daysInMonth(month, year) {
+        const months = [0, 31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        let numDays = 0;
+        for (let i = 1; i < month; i++) {
+            numDays += months[i]
+        }
+        return numDays
+    }
+
+    let numDays1 = daysInYear(year1 - 1) + daysInMonth(month1, year1) + day1
+    let numDays2 = daysInYear(year2 - 1) + daysInMonth(month2, year2) + day2
+
+    return Math.abs(numDays1 - numDays2)
 }
 
 // 25. Construct a function that takes a positive integer as its argument and returns an array of all the integers that are both less than the input and prime. Use the function you wrote for checking if a number is prime from the previous set of challenges, if needed.
