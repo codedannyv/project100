@@ -866,8 +866,14 @@ describe('24. calculateDaysBetweenDates', () => {
 
 describe("prime array function", () => {
     it("when given a positive integer it returns all of the primes less than that integer", () => {
-        // Arrage
+        // Arrange
         const integer = 27;
-        const expected = []
+        const expected = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+
+        // Act
+        const result = fx.primeArray(integer);
+
+        // Assert
+        expect(result).toEqual(expected)
     })
 })

@@ -441,10 +441,7 @@ export function calculateDaysBetweenDates(date1, date2) {
 
     function daysInMonth(month, year) {
         const months = [0, 31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-        let numDays = 0;
-        for (let i = 1; i < month; i++) {
-            numDays += months[i]
-        }
+        const numDays = months.slice(1, month).reduce((acc, val) => acc + val, 0);
         return numDays
     }
 
@@ -457,7 +454,17 @@ export function calculateDaysBetweenDates(date1, date2) {
 // 25. Construct a function that takes a positive integer as its argument and returns an array of all the integers that are both less than the input and prime. Use the function you wrote for checking if a number is prime from the previous set of challenges, if needed.
 // input: positive integer
 // output: array with all the primes less than that 
+export function primeArray(n) {
+    let result = [];
 
+    for (let i = 0; i <= n; i++) {
+        if (isPrime(i)) {
+            result.push(i)
+        }
+    }
+
+    return result;
+}
 
 
 // 101. Write a function that returns a random number between two numbers (inclusive)
