@@ -408,23 +408,9 @@ export const findString = (arr, char) => {
     return result;
 }
 
-// use recursion
-
-
-
 // 24. Write a function that calculates the number of days between two dates. The dates will be passed to the function as strings in the format "YYYY-MM-DD".
 // input: two dates:
 // output: total days between two dates
-
-function daysInYear(year) {
-    return 365 * year + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)
-}
-
-console.log(daysInYear(1))
-console.log(daysInYear(2))
-console.log(daysInYear(3))
-console.log(daysInYear(4))
-console.log(daysInYear(5))
 
 
 export function calculateDaysBetweenDates(date1, date2) {
@@ -465,6 +451,11 @@ export function primeArray(n) {
 
     return result;
 }
+
+// use the sieve of eratosthenes
+
+
+// 26. Write a function that merges two sorted arrays into a single sorted array. Do not use the .sort() method.
 
 
 // 101. Write a function that returns a random number between two numbers (inclusive)
