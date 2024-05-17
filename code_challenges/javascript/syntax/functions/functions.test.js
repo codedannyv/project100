@@ -877,3 +877,31 @@ describe("prime array function", () => {
         expect(result).toEqual(expected)
     })
 })
+
+describe("prime array function using the sieve of eratosthenes", () => {
+    it("when given a positive integer it returns all of the primes less than that integer", () => {
+        // Arrange
+        const integer = 27;
+        const expected = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+
+        // Act
+        const result = fx.sieveOfEratosthenes(integer);
+
+        // Assert
+        expect(result).toEqual(expected)
+    })
+})
+
+describe("merges two sorted arrays ", () => {
+    it("When given two arrays return one array with all values sorted", () => {
+        // Arrange
+        let array1 = [1, 3, 5, 7];
+        let array2 = [2, 4, 6, 8];
+        let expected = [1, 2, 3, 4, 5, 6, 7, 8]
+
+        // Act
+        const result = fx.sortCombinedArray(array1, array2);
+        // Assert
+        expect(result).toEqual(expected)
+    })
+})

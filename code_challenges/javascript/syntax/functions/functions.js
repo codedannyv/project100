@@ -453,10 +453,56 @@ export function primeArray(n) {
 }
 
 // use the sieve of eratosthenes
+export function sieveOfEratosthenes(n) {
+    let isPrime = Array(n + 1).fill(true);
+    isPrime[0] = isPrime[1] = false
+
+    for (let i = 2; i * i <= n; i++) {
+        if (  isPrime[i] ) {
+            for (let j = i * i; j <= n; j += i) {
+                isPrime[j] = false;
+            }
+        }
+    }
+
+    let result = [];
+    for (let i = 2; i < isPrime.length; i++) {
+        if ( isPrime[i] ) {
+            result.push(i);
+        }
+    }
+    return result
+}
 
 
 // 26. Write a function that merges two sorted arrays into a single sorted array. Do not use the .sort() method.
+export const sortCombinedArray = (arr1, arr2) => {
+    let mergedArray = [];
+    let i = 0;
+    let j = 0;
 
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            mergedArray.push(arr1[i])
+            i++;
+        } else {
+            mergedArray.push(arr2[j]);
+            j++
+        }
+    }
+
+    while (i < arr1.length) {
+        mergedArray.push(arr1[i]);
+        i++
+    }
+
+    while (j < arr2.length) {
+        mergedArray.push(arr2[j]);
+        j++
+    }
+
+    return mergedArray
+}
 
 // 101. Write a function that returns a random number between two numbers (inclusive)
 function randomFive(min, max) {
