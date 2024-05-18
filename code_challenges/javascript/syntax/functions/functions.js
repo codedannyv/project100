@@ -234,27 +234,26 @@ export function sumArrayRecursion(arr, index=0, sum=0) {
 }
 
 // 14. Write a function that takes a number and returns true if it is a prime number and false otherwise.
-export const isPrime = (n) => {
-    if (n <= 1) {
+export function isPrime(n) {
+    if ( n <= 1 ) {
         return false
     }
-    if (n === 2 || n === 3) {
+
+    if ( n === 2 || n === 3) {
         return true
     }
 
-    if (n % 2 === 0 || n % 3 === 0) {
+    if ( n % 2 === 0 || n % 3 === 0) {
         return false
     }
 
     for (let i = 5; i * i <= n; i += 6) {
-        if (n % i === 0 || n % (i + 2) === 0) {
+        if ( n % i === 0 || n % (i + 2) === 0) {
             return false
         }
     }
-
     return true
-}
-
+} 
 
 // 15. Write a function that mimics the JavaScript .slice() method for arrays. It should take an array, a start index, and an optional end index and return a new array.
 export function mySlice(arr, start, end) {
@@ -411,31 +410,32 @@ export const findString = (arr, char) => {
 // 24. Write a function that calculates the number of days between two dates. The dates will be passed to the function as strings in the format "YYYY-MM-DD".
 // input: two dates:
 // output: total days between two dates
-
-
-export function calculateDaysBetweenDates(date1, date2) {
-    function isLeapYear (year) {
-        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+export const calculateDaysBetweenDates = (date1, date2) => {
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
     }
 
-    let [year1, month1, day1] = date1.split('-').map(Number);
-    let [year2, month2, day2] = date2.split('-').map(Number);
-    // Calculate the number of days for each year
     function daysInYear(year) {
         return 365 * year + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)
     }
 
     function daysInMonth(month, year) {
-        const months = [0, 31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-        const numDays = months.slice(1, month).reduce((acc, val) => acc + val, 0);
+        const months = [0, 31, isLeapYear(year) ? 29: 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        let numDays = months.slice(1, month).reduce((acc, val) => acc + val, 0)
         return numDays
     }
+
+    let [year1, month1, day1] = date1.split('-').map(Number)
+    let [year2, month2, day2] = date2.split('-').map(Number)
 
     let numDays1 = daysInYear(year1 - 1) + daysInMonth(month1, year1) + day1
     let numDays2 = daysInYear(year2 - 1) + daysInMonth(month2, year2) + day2
 
     return Math.abs(numDays1 - numDays2)
 }
+
+
+
 
 // 25. Construct a function that takes a positive integer as its argument and returns an array of all the integers that are both less than the input and prime. Use the function you wrote for checking if a number is prime from the previous set of challenges, if needed.
 // input: positive integer
@@ -454,67 +454,56 @@ export function primeArray(n) {
 
 // use the sieve of eratosthenes
 export function sieveOfEratosthenes(n) {
-    let isPrime = Array(n + 1).fill(true);
+    let isPrime = new Array(n + 1).fill(true);
     isPrime[0] = isPrime[1] = false
 
     for (let i = 2; i * i <= n; i++) {
-        if (  isPrime[i] ) {
+        if (isPrime[i]) {
             for (let j = i * i; j <= n; j += i) {
-                isPrime[j] = false;
+                isPrime[j] = false
             }
         }
     }
 
     let result = [];
-    for (let i = 2; i < isPrime.length; i++) {
-        if ( isPrime[i] ) {
-            result.push(i);
+    for (let i = 2; i < n; i++) {
+        if (isPrime[i]) {
+            result.push(i)
         }
     }
-    return result
-}
 
+    return result
+
+}
 
 // 26. Write a function that merges two sorted arrays into a single sorted array. Do not use the .sort() method.
 export const sortCombinedArray = (arr1, arr2) => {
-    let mergedArray = [];
+    let mergedArray = []
     let i = 0;
     let j = 0;
 
     while (i < arr1.length && j < arr2.length) {
         if (arr1[i] < arr2[j]) {
-            mergedArray.push(arr1[i])
+            mergedArray.push(arr1[i]);
             i++;
         } else {
-            mergedArray.push(arr2[j]);
-            j++
+            mergedArray.push(arr2[j])
+            j++;
         }
     }
 
-    while (i < arr1.length) {
-        mergedArray.push(arr1[i]);
-        i++
+    while (i < arr1.length ) {
+        mergedArray.push(arr1[i])
+        i++;
     }
 
-    while (j < arr2.length) {
-        mergedArray.push(arr2[j]);
-        j++
+    while (j < arr2.length ) {
+        mergedArray.push(arr2[j])
+        j++;
     }
 
     return mergedArray
 }
 
-// 101. Write a function that returns a random number between two numbers (inclusive)
-function randomFive(min, max) {
-    let inclusive = max + 1;
-    let result = [];
 
-    for (let i = 1; i <= 5; i++) {
-        result.push(Math.floor(Math.random() * (inclusive - min) + min));
-    }
-
-    console.log(result);
-}
-
-
-
+// 27. Create a function that takes a string as input and returns an object where the keys are letters and the values are the number of times each letter appears in the string.
